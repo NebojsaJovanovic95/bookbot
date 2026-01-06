@@ -1,4 +1,4 @@
-from stats import count_words
+from stats import count_words, count_chars
 
 def get_book_text(path: str = "")->str:
     with open(path) as f:
@@ -11,6 +11,8 @@ def main():
     )
     num_words:int = count_words(text = book_text)
     print(f"Found {num_words} total words")
+    chars = count_chars(book_text)
+    print(chars)
 
 if __name__ == "__main__":
     main()
