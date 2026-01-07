@@ -12,3 +12,15 @@ def count_words(text:str = "") -> int:
         text.split()
     )
 
+def sorted_dicts(chars: dict = {}) -> list[dict]:
+    char_counts = sorted(
+        [
+            {
+                "char": key,
+                "num": chars[key]
+            } for key in chars
+        ],
+        reverse=True,
+        key=lambda item: item["num"]
+    )
+    return char_counts
